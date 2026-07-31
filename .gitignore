@@ -1,0 +1,14 @@
+# Visual Studio
+.vs/
+
+# macOS
+.DS_Store
+
+# Build outputs
+*.exe
+*.out
+*.o
+*.obj
+
+# Temp files
+~$*
