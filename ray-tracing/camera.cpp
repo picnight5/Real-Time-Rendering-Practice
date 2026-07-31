@@ -16,7 +16,6 @@ namespace RayTracing {
         return background;
     }
 
-    // TODO: 4.2 Get the color from scattered or emitted rays
     return background;
 }
 */

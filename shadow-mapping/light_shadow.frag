@@ -26,7 +26,6 @@ in VS_OUT {
 
 float ShadowCalculation(vec4 fragPosLightSpace)
 {
-	// TODO 2.2.2 : Complete the following shadow mapping calculations
 	vec3 projCoords = fragPosLightSpace.xyz/fragPosLightSpace.w;
 	projCoords = projCoords * 0.5 + 0.5;
     // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
@@ -70,7 +69,6 @@ void main() {
 
 	vec4 fragPosLightSpace = light_space_matrix * vec4(vs_out.WorldPos, 1.0);
 
-	// TODO 2.2.1 : Complete the following shadow mapping calculations
 	//ambient
 	float ambient= 0.1;
 
@@ -97,7 +95,6 @@ void main() {
         
 	}
 
-	// TODO 2.2.1 : Modify the output of frag color
     vec3 lightcolor = 1.0f*point_light_radiance/255;
     color = vec3(lightcolor[0]*color[0],lightcolor[1]*color[1],lightcolor[2]*color[2]);
 	color = (ambient + (1.0-shadow)*(diffuse + specular)) * color;

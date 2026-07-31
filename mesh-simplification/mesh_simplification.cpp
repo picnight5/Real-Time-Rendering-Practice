@@ -128,7 +128,6 @@ Model *simplify_mesh(
         }
     }
    
-    // TODO 3.1:
     // compute the Q matrices for all the initial vertices
     std::vector<matf4> qMatrices(vertices.size());
     matf4 Kp;
@@ -178,7 +177,6 @@ Model *simplify_mesh(
     //std::vector<vecf3> face_normals(faces.size());
     //std::vector<float> face_ds(faces.size());
 
-    // TODO 3.2:        //注意！pair selection未考虑第二种情况，Vnew计算可完善！
     
     // select all valid pairs(edges) and compute the cost of each edge
     // 使用优先队列（堆）来存储边的代价信息，以便快速找到最小代价的边
@@ -231,7 +229,6 @@ Model *simplify_mesh(
 
    
    
-    // TODO 3.3:
     // iteratively remove the pair of the least cost from the heap
     uint32_t face_cnt = faces.size();
     //uint32_t face_cnt = vertices.size();//=========================疑问：是否该这么写？

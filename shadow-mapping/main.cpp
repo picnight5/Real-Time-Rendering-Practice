@@ -154,7 +154,6 @@ int main(int argc, char **argv) {
         glViewport(0, 0, SHADOW_TEXTURE_SIZE, SHADOW_TEXTURE_SIZE);
         glClear(GL_DEPTH_BUFFER_BIT);
 
-        // TODO 2.2.2 : Uncomment the following segment, then modify the light_projection and light_view implementations yourself.
         float near_plane = 0.1f, far_plane = 100.0f;
         auto light_projection = Utils::Transform::orthographic(30.0f,30.0f,near_plane,far_plane);
         auto light_view = Utils::Transform::look_at(light_pos,plane_pos, vecf3(0.0f, 1.0f, 0.0f));

@@ -20,7 +20,6 @@ bool HittableList::hit(const Ray& r, Interval ray_t, Record& rec) const {
 }
 
 
-// TODO: 4.3 Sphere & ray intersection
 bool Sphere::hit(const Ray& r, Interval ray_t, Record& rec) const {
     vecf3 current_center = center.at(r.time); // 获取球体的中心位置，这里假设球体中心是固定的
     vecf3 oc = current_center - r.origin; // 计算光线原点到球体中心的向量
@@ -87,7 +86,6 @@ public:
         D = n.dot(Q);
     }
 */ 
-    // TODO: 4.3 Quad & ray intersection
     bool Quad::hit(const Ray& r, Interval ray_t, Record& rec) const {
         // 1) 计算平面与光线的交点
         auto denom = r.direction.dot(normal);
@@ -129,7 +127,6 @@ public:
 std::shared_ptr<HittableList> box(const vecf3& a, const vecf3& b, std::shared_ptr<Material> mat) {
     auto sides = std::make_shared<HittableList>();
 
-    // TODO: Use the Quad class to create the six sides of the box.
     // `a` and `b` are the two opposite vertices of the box.
     // 计算立方体的六个面的顶点
     vecf3 p0 = a;
@@ -159,7 +156,6 @@ std::shared_ptr<HittableList> box(const vecf3& a, const vecf3& b, std::shared_pt
 
 
 /*bool ConstantMedium::hit(const Ray& r, Interval ray_t, Record& rec) const {
-    // TODO: 4.3 Constant Medium & ray intersection
     return false;
 }
 */
@@ -290,7 +286,6 @@ bool RotateY::hit(const Ray& r, Interval ray_t, Record& rec) const {
 
 
 /*bool BVHNode::hit(const Ray& r, Interval ray_t, Record& rec) const {
-    // TODO: 4.4 Using BVH to accelerate ray tracing
     return false;
 }
 */
